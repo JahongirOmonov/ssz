@@ -46,7 +46,7 @@ class delete(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
 class todaysTodo(APIView):
-    def get(self, request, *args)
+    def get(self, request, *args):
         today=datetime.date.today()
         x=todoModel.objects.filter(created_at__date=today)
         serializer=TodoSerializer(x, many=True)
